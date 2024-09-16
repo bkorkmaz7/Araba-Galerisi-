@@ -1,0 +1,266 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /*Kutunun kenarlarını tanımlamak için kullanılabilir.*/
+}
+
+html{
+    font-size: 6px;
+}
+
+body{
+    font-size: 1.6rem;
+    line-height: 1.5;
+    background-color: #FFF4E0;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.text-uppercase{
+    text-transform: uppercase;
+}
+
+.clearfix::after{ /*Floatlar birbirine karışmasın diye.*/
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.container{ /*Div ayarları*/
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+@media (min-width:576px){
+    .container{
+        max-width:540px; 
+    }
+    html{
+        font-size: 3px;
+    }
+}
+
+@media (min-width:768px){
+    .container{
+        max-width:720px; 
+    }
+    html{
+        font-size: 4px;
+    }
+}
+
+@media (min-width:992px){
+    .container{
+        max-width:960px; 
+    }
+    html{
+        font-size: 5px;
+    }
+}
+
+@media (min-width:1200px){
+    .container{
+        max-width:1140px; 
+    }
+    html{
+        font-size: 6px;
+    }
+}
+
+/*Navbar*/
+
+nav{
+    width: 100%;
+    position: fixed;
+    font-family: 'Sarpanch', sans-serif;
+    background-color: #1F2226;
+    color: #F8B500;
+    padding-top: 2rem;
+    padding-bottom: 1.3rem;
+    z-index: 500; /*Navbarı tüm öğelerin üstünde tutmak için*/
+}
+
+#logo-box{
+    float: left;
+    padding-top: 0.5rem;
+}
+
+#logo-box .logo{
+    margin-left: 2rem;
+}
+
+#nav-links{
+    float: right;
+    margin-right: 2.1rem;
+}
+
+#nav-links .nav-item{
+    float: left;
+}
+
+#nav-links .nav-link{
+    color: #F8B500;
+    font-size: 4rem;
+    font-weight: 700;
+    display: block;
+    padding: 4.5rem;
+    margin-right: 1rem;
+    margin-top: 1.5rem;
+    letter-spacing: 0.4rem;
+    transition: color 0.4s;
+}
+
+#nav-links .nav-link:hover{
+    color: #FFF4E0;
+}
+
+#nav-links .nav-icon{
+    display: none;
+}
+
+@media (max-width:992px){
+    #logo-box{
+        float: none;
+        text-align: left;
+    }
+    #nav-links{
+        float: none;
+    }
+    #nav-links .nav-link{
+        font-size: 5rem;
+        padding-left: 0;
+    }
+    #nav-links .nav-item{
+        float: none;
+        text-align: left;
+    }
+    #nav-links .nav-icon{
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 5px;
+    }
+    #nav-links.responsive li:not(:first-child){ /*Buton dışındaki linklerin gözükmemesi için*/
+        display: none;
+    }    
+}
+
+/*Header*/
+
+header{
+    background-color: #FFF4E0;
+    padding-top: calc(100px + 10rem);
+    text-align: center;
+}
+
+header i{
+    font-size: 20rem;
+}
+
+header h1{
+    font-family: 'Sarpanch', sans-serif;
+    font-size: 6rem;
+    margin-top: 2rem;
+    color: #1F2226;
+}
+
+/*Section*/
+
+#contact-form{
+    width: 70%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group{
+    border-bottom: 1px solid #1F2226;
+    padding-bottom: 3rem;
+    margin-bottom: 4rem;
+}
+
+.form-group input, .form-group textarea{
+    border: none;
+    width: 100%;
+    display: block;
+    font-size: 2.4rem;
+    background-color: #FFF4E0;
+}
+
+.form-group input:focus{
+    outline: 0;
+}
+
+.form-group textarea:focus{
+    outline: 0;
+}
+
+.btn{
+    font-family: 'Sarpanch', sans-serif;
+    background-color: #F8B500;
+    color: #1F2226;
+    padding: 2rem;
+    font-size: 3rem;
+    font-weight: 700;
+    border-radius: 15px;
+}
+
+.btn:hover{
+    background-color: #1F2226;
+    color: #F8B500;
+    border-color: #F8B500;
+}
+
+/*Footer*/
+
+footer{
+    text-align: center;
+}
+
+footer i{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    font-size: 7rem;
+}
+
+footer p{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-family: 'Sarpanch', sans-serif;
+    font-size: 3rem;
+}
+
+/*Designer*/
+
+.designer{
+    font-family: 'Sarpanch', sans-serif;
+    background-color: #1F2226;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: #F8B500;
+    text-align: center;
+    letter-spacing: 0.2rem;
+}
+
+.imza{
+    color: #F8B500;
+    transition: color 0.4s;
+}
+
+.imza:hover{
+    color: #FFF4E0;
+    text-decoration: none;
+}
+
+.imzaa{
+    font-weight: normal;
+    font-size: 2rem;
+}

@@ -1,0 +1,335 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /*Kutunun kenarlarını tanımlamak için kullanılabilir.*/
+}
+
+html{
+    font-size: 6px;
+}
+
+body{
+    font-size: 1.6rem;
+    line-height: 1.5;
+    background-color: #FFF4E0;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.text-uppercase{
+    text-transform: uppercase;
+}
+
+.clearfix::after{ /*Floatlar birbirine karışmasın diye.*/
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.container{ /*Div ayarları*/
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.colbilgin{
+    float: left;
+    width: 100%;
+    padding: 1rem;
+}
+
+section{
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    text-align: center;
+}
+
+@media (min-width:576px){
+    .container{
+        max-width:540px; 
+    }
+    html{
+        font-size: 3px;
+    }
+}
+
+@media (min-width:768px){
+    .container{
+        max-width:720px; 
+    }
+    html{
+        font-size: 4px;
+    }
+    .colbilgin{
+        width: 50%;
+    }
+}
+
+@media (min-width:992px){
+    .container{
+        max-width:960px; 
+    }
+    html{
+        font-size: 5px;
+    }
+    .colbilgin{
+        width: 33.333%;
+    }
+}
+
+@media (min-width:1200px){
+    .container{
+        max-width:1140px; 
+    }
+    html{
+        font-size: 6px;
+    }
+}
+
+/*Navbar*/
+
+nav{
+    width: 100%;
+    position: fixed;
+    font-family: 'Sarpanch', sans-serif;
+    background-color: #1F2226;
+    color: #F8B500;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    z-index: 500; /*Navbarı tüm öğelerin üstünde tutmak için*/
+}
+
+#logo-box{
+    float: left;
+    padding-top: 0.5rem;
+}
+
+#logo-box .logo{
+    margin-left: 0.1rem;
+}
+
+#nav-links{
+    float: right;
+    margin-right: 0.1rem;
+}
+
+#nav-links .nav-item{
+    float: left;
+}
+
+#nav-links .nav-link{
+    color: #F8B500;
+    font-size: 4rem;
+    font-weight: 700;
+    display: block;
+    padding: 4.5rem;
+    margin-right: 1rem;
+    margin-top: 1.5rem;
+    letter-spacing: 0.4rem;
+    transition: color 0.4s;
+}
+
+#nav-links .nav-link:hover{
+    color: #FFF4E0;
+}
+
+#nav-links .nav-icon{
+    display: none;
+}
+
+@media (max-width:992px){
+    #logo-box{
+        float: none;
+        text-align: left;
+    }
+    #nav-links{
+        float: none;
+    }
+    #nav-links .nav-link{
+        font-size: 5rem;
+        padding-left: 0;
+    }
+    #nav-links .nav-item{
+        float: none;
+        text-align: left;
+    }
+    #nav-links .nav-icon{
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 5px;
+    }
+    #nav-links.responsive li:not(:first-child){ /*Buton dışındaki linklerin gözükmemesi için*/
+        display: none;
+    }    
+}
+
+/*Header*/
+
+header{
+    background-color: #FFF4E0;
+    padding-top: calc(100px + 10rem);
+}
+
+header img{
+    max-width: auto;
+    height: 650px;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+}
+
+header h1{
+    font-family: 'Sarpanch', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    background-color: #1F2226;
+    color: #F8B500;
+    border-radius: 2rem;
+    margin-bottom: -20px;
+}
+
+/*Section*/
+
+#portfolio{
+    font-family: 'Sarpanch', sans-serif;
+    background-color: #FFF4E0;
+}
+
+#portfolio h2{
+    font-size: 7rem;
+    font-weight: 700;
+    color: #1F2226;
+    padding-bottom: 7rem;
+}
+
+.img-fluid-p{
+    max-width: 100%;
+    height: auto;
+}
+
+.portfolio-item{
+    position: relative;
+}
+
+.portfolio-item img{
+    display: block;
+    border-radius: 15px;
+}
+
+.img-overlay{ /*Artı arka plan*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #F8B500;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.img-overlay .icon{ /*Artı*/
+    color: #1F2226;
+    font-size: 8rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.portfolio-item:hover .img-overlay{
+    opacity: 0.8;
+    border-radius: 15px;
+}
+
+/*Footer*/
+
+footer{
+    font-family: 'Sarpanch', sans-serif;
+    background-color: #1F2226;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    color: #F8B500;
+    text-align: center;
+}
+
+footer h4{
+    font-size: 5rem;
+}
+
+footer p{
+    font-size: 3rem;
+    margin-top: 2rem;
+}
+
+footer li{
+    display: inline-block;
+    margin-right: 0.1rem;
+}
+
+button i{
+    border: 2px solid #F8B500;
+    border-radius: 50%;
+    transition: all 0.5s;
+    width: 8rem;
+    height: 8rem;
+    font-size: 4rem;
+    padding: 1.5rem;
+}
+
+.btn-outline{
+    background-color: transparent;
+    color: #F8B500;
+}
+
+.btn-outline:hover{
+  background-color: #F8B500;
+  color: #1F2226;
+  border-radius: 50%;
+}
+
+.iletisim{
+    color: #F8B500;
+    transition: color 0.4s;
+}
+
+.iletisim:hover{
+    color: #FFF4E0;
+    text-decoration: none;
+}
+
+/*Designer*/
+
+.son{
+    background-color: #1F2226;
+}
+
+.designer{
+    font-family: 'Sarpanch', sans-serif;
+    background-color: #1F2226;
+    border: 1px solid #F8B500;
+    border-radius: 15px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: #F8B500;
+    text-align: center;
+    letter-spacing: 0.2rem;
+}
+
+.imza{
+    color: #F8B500;
+    transition: color 0.4s;
+}
+
+.imza:hover{
+    color: #FFF4E0;
+    text-decoration: none;
+}
